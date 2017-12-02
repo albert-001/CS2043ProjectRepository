@@ -1,0 +1,79 @@
+#chat_container{
+	width: 430px;
+	height: 500px;
+	margin: 100px auto 0 auto;
+	overflow: auto;
+	border:1px solid #ACD8F0;
+	background:#EBF4FB;
+}
+
+#send_container{
+	margin:0 auto;
+	width: 430px;
+	border:1px solid #ACD8F0;
+}
+
+#message{
+	width:360px;
+}
+
+#send{
+	margin-left:10px;
+}
+
+.msg_left{
+	text-align: left;
+}
+
+.msg_right{
+	text-align: right;
+}
+
+.chat_name, .caret_left, .caret_right, .msg_content_left, .msg_content_right{
+	display: inline-block;
+}
+
+.caret_left{
+	width: 0; 
+  	height: 0; 
+  	border-top: 5px solid transparent;
+  	border-bottom: 5px solid transparent; 
+  	border-right: 5px solid white; 
+}
+
+.caret_right{
+	width: 0; 
+  	height: 0; 
+  	border-top: 5px solid transparent;
+  	border-bottom: 5px solid transparent; 
+  	border-left: 5px solid #32CD32; 
+}
+
+.chat_name {
+	font-family: Arial;
+	font-size: 12px;
+	padding: 5px;
+}
+
+.msg_content_left, .msg_content_right{
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 3px 5px;
+	border:1px solid #ACD8F0;
+	min-width: 30px;
+	max-width: 300px;
+	overflow-wrap: break-word;
+	font-family: Courier;
+	font-size: 16px; 
+}
+
+.msg_content_left{
+	padding-right: 5px;
+	background: white;
+}
+
+.msg_content_right{
+	padding-left: 5px;
+	background: #32CD32;
+}
+
