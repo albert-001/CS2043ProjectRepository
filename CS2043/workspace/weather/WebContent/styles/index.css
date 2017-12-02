@@ -1,0 +1,118 @@
+.link{float:right; margin-top:11px; color:#333;}
+.link span{margin:5px;}
+
+.wrap{ width: 1000px; margin: 0 auto;}
+#popup_mask{ display: none; position: absolute; z-index: 1999996; left: 0; top: 0; width: 100%; height: 100%; background-color: #000; opacity: 0.3; filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=30);}
+#popup_loading{ display: none; position: absolute; z-index: 1999998; left: 0; width: 50px; height: 24px;}
+#popup{ display: none; position: absolute; z-index: 1999997; left: 0; width: 0; background-color: #fff; border: none;}
+
+.wt_tt0_w{ height: 40px; line-height: 40px;}
+.wt_tt0{ float: left; display: inline; padding-left: 10px; font-size: 18px; color: #068894; font-family: "arial"; font-weight: bold;}
+.wt_tt0_note{ font-size: 12px; font-weight: normal; color: #aaa;}
+.wt_tt0_r{ float: right; display: inline;}
+.wt_switch{ float: left; display: inline; margin-right: 5px; width: 48px; padding-left: 20px; height: 18px; line-height: 18px; text-align: center; font-size: 12px; border-radius: 99px; background-color: #656565; transition: background-color,color ease 0.6s; cursor: pointer; color: #aaa;}
+.wt_switch:hover{ background-color: #058793; color: #fff;}
+.wt_switch_on{ background-color: #058793; color: #fff; cursor: default;}
+
+
+/*yellow icons 35px*/
+
+/*head*/
+.header{ background-color: #fff;}
+.hd_bar{ position: relative; z-index: 104; border-top: 3px solid #277471; border-bottom: 1px solid #e5e5e5; background-color: #F7F7F7;}
+.hc_cont{ height: 100px;}
+.logo_w{ position: relative; float: left; display: inline; width: 200px;}
+.logo_w h1{ position: relative; width: 200px; overflow: hidden; text-indent: -99em; margin-top: 35px; height: 60px; background: url(../images/logo.png) 0 0 no-repeat;}
+.logo_w h1 a, .logo_w h1 a:visited{ display: block; width: 200px; height: 60px; cursor: pointer; outline: none;}
+#effects{ position: absolute; top: 10px; left: 10px;}
+
+.hd_nav{ height: 50px; line-height: 50px; background-color: #2B2B2B;}
+.hd_nav_list{ float: left; display: inline; width: 800px;}
+.hd_nav_list li{ float: left; display: inline; margin-top: 7px; height: 35px; line-height: 35px; margin-left: 20px; margin-right: 20px; color: #fff; font-size: 16px; border-bottom: 0px solid #f39c12; transition: border ease 0.3s;}
+.hd_nav_list li.hd_nav_i_on{ border-bottom: 3px solid #f39c12;}
+.hd_nav_list li:hover{ border-bottom: 3px solid #f39c12;}
+.hd_nav_list li a, .hd_nav_list li a:visited{ color: #fff;}
+#city{ float: right; display: inline; width: 100px; font-size: 14px; margin-top:16px; margin-right:5px;}
+
+a.hd_nav_home, a.hd_nav_home:visited{ float: right; display: inline; color: #959595; font-size: 14px; transition: color ease 0.3s;}
+a.hd_nav_home:hover{ color: #fff;}
+
+body{ transition: background-position ease 0.3s;}
+
+/*change background using these classes*/
+.bg_sunny{ background: #000 url(../images/sunny.jpg) top center no-repeat; background-attachment: fixed;}
+.bg_rainy{ background: #000 url(../images/rainy.jpg) top center no-repeat; background-attachment: fixed;}
+.bg_cloudy{ background: #000 url(../images/cloudy.jpg) top center no-repeat; background-attachment: fixed;}
+.bg_snow{ background: #000 url(../images/snow.jpg) top center no-repeat; background-attachment: fixed;}
+.bg_overcast{ background: #000 url(../images/overcast.jpg) top center no-repeat; background-attachment: fixed;}
+/* add other backgrounds here*/
+
+
+/*local weather*/
+.lw{ position: relative; width: 1000px; height: 460px; background: rgba(6,135,147,0.5); filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = '#aa068793', endColorstr = '#aa068793' )\9; overflow: hidden;}
+.lw_ctrl{}
+.lw_i{ position: relative; float: left; display: inline; width: 1000px; height: 460px;}
+.lw_ct{ position: absolute; left: 50px; top: 25px; z-index: 1; width: 330px;}
+.lw_ct_name{ height: 40px; line-height: 40px; font-size: 28px; font-weight: normal; color: #fff;}
+.lw_ct_enname{ height: 40px; line-height: 40px; font-size: 24px; font-weight: normal; color: #fff;}
+.lw_ct_date{ line-height: 30px; font-size: 18px; color: #fff;}
+.lw_ct_info{ line-height: 20px; font-size: 14px; color: #fff; padding-top: 10px;}
+.lw_states{ width: 440px; margin: 40px auto 0;}
+.lw_icon_w{ height: 128px;}
+.lw_icon{ display: block; margin: 0 auto; width: 128px; height: 128px;}
+.lw_degree{ height: 140px; line-height: 140px; text-align: center; font-size: 125px; color: #fff;}
+.lw_detail{ width: 100%; height: 41px; line-height: 41px; font-size: 16px; color: #fff; text-align: center; border-radius: 99px; background-color: rgba(0,0,0,0.3); filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = '#aa000000', endColorstr = '#aa000000' )\9; transition: background-color ease 0.3s;}
+.lw_detail:hover{ background-color: rgba(0,0,0,0.5);}
+
+
+
+.air_q{ position: absolute; z-index: 1; right: 60px; top: 160px; width: 206px;}
+
+}
+
+
+.wrap_w{ overflow: hidden;}
+/*天气预报*/
+.wt_forecast{ margin-top: 10px; height: 334px; background-color: rgba(0,0,0,0.5); filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = '#aa000000', endColorstr = '#aa000000' )\9;}
+.wt_forecast .wt_tt0_w{ padding-top: 3px; height: 42px;}
+.wt_forecast .wt_tt0_r{ padding-right: 15px; padding-top: 10px;}
+.blk_fc_c{}
+
+/*天气预报-列表*/
+.blk_fc_c0{ position: relative; margin-top: 20px; height: 240px; _width: 1000px; overflow: hidden;}
+.blk_fc_c0_scroll_w{ position: relative; width: 940px; overflow: hidden; margin-left: 20px;}
+.blk_fc_c0_scroll{ position: relative; width: 30000px;}
+.blk_fc_c0_i{ float: left; display: inline; width: 169px; height: 240px; border-right: 1px dotted #575754; transition: background-color ease 0.3s;}
+.blk_fc_c0_i:hover{ background-color: rgba(255,255,255,0.05);}
+.blk_fc_prev:hover, .blk_fc_next:hover{ opacity: 0.7;}
+.wt_fc_c0_i_date{ padding-top: 10px; height: 20px; line-height: 20px; font-size: 14px; color: #cbcbcb; text-align: center;}
+.wt_fc_c0_i_day{ height: 20px; line-height: 20px; font-size: 16px; color: #cbcbcb; text-align: center;}
+.wt_fc_c0_i_today{ color: #068793;}
+.wt_fc_c0_i_icons{ padding-top: 10px; text-align: center; height: 37px; overflow: hidden;}
+.wt_fc_c0_i_icons .icons0_wt{ display: inline-block; *display: inline; *zoom: 1; width: 32px; height: 32px; margin-left: 5px; margin-right: 5px;}
+.wt_fc_c0_i_temp{ height: 50px; line-height: 50px; font-size: 24px; color: #cbcbcb; text-align: center; font-family: "arial";}
+.wt_fc_c0_i_times{ height: 24px; line-height: 24px; text-align: center; overflow: hidden;}
+.wt_fc_c0_i_time{ display: inline-block; *display: inline; *zoom: 1; margin-right: 6px; margin-left: 6px; color: #cbcbcb; font-size: 14px;}
+.wt_fc_c0_i_level{ margin:12px auto 0; padding:0 15px; width:90px; height:26px; line-height:26px; overflow:hidden; *zoom:1; color:#fff; border-radius:15px; font-size:14px;}
+.wt_fc_c0_i_level .l{ float:left; line-height:26px;}
+.wt_fc_c0_i_level .r{ float:right; line-height:26px;}
+.level_bg6{background:#7646a3;}
+.level_bg2{background:#ffb533;}
+.level_bg1{background:#72af3c;}
+.level_bg3{background:#c88f35;}
+.level_bg5{background:#e60000;}
+.level_bg4{background:#e66000;}
+
+.fc_icons_w{ position: absolute; z-index: 2; width: 48px; height: 50px; text-align: center; overflow: hidden; -webkit-transition: -webkit-transform 0.4s ease; -moz-transition: -moz-transform 0.4s ease; -ms-transition: -ms-transform 0.4s ease;}
+.fc_icons_w:hover{ transform: scale(1.1, 1.1); -webkit-transform: scale(1.1, 1.1);}
+.fc_icon{ display: block; margin: 0 auto; width: 30px; height: 30px;}
+.fc_icon{ display: block; font-size: 14px; color: #fff;}
+
+.part1{ margin-top: 10px;}
+.part2{ margin-top: 10px;}
+
+.footer{ margin-top: 10px; background-color: rgba(0,0,0,0.25); filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 0,startColorstr = '#aa000000', endColorstr = '#aa000000' )\9; *background-color: #000;}
+.ft_1{ padding: 20px 0;}
+.ft_1 p{ line-height: 30px; text-align: center; font-size: 14px; color: #999;}
+.ft_1 p a, .ft_1 p a:visited{ color: #999;}
+.ft_1 p a:hover{ color: #fff;}

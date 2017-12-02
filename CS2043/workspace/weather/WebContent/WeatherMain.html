@@ -1,0 +1,210 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/app-ajax.js"></script>
+<title>Canada City Weather Forecast</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+        fieldset, img { border:none; }
+        address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
+        ul, ol { list-style:none; }
+        input { padding-top:0; padding-bottom:0; }
+        select, input { vertical-align:middle; }
+        select, input, textarea { font-size:12px; margin:0; }
+        table { border-collapse:collapse; }
+        body { background:#fff; color:#000; font:14px/20px "Arial";}
+        iframe { border:none;}
+        .clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+        .clearfix { zoom:1; }
+        .clearit { clear:both; height:0; font-size:0; overflow:hidden; }
+        a { color:#000; text-decoration:none; }
+        a:visited { color:#800080; }
+        a:hover{ color: #068793;}
+        a:hover, a:active, a:focus { text-decoration:none; }
+    </style>
+
+    <link rel="stylesheet" href="./styles/index.css">
+
+    <style type="text/css">
+        .hd_nav_list li{margin-left:10px;}
+    </style>
+</head>
+
+<body class="bg_default">
+    <div class="wrap hc_cont clearfix">
+        <div class="logo_w">
+            <h1 id="logo" class="png24">
+                
+            </h1>
+        </div>
+    </div>
+    
+    <div class="hd_nav">
+        <div class="wrap hd_nav_c">
+            <ul class="hd_nav_list" style="width:890px;">      
+                <li id="logged_in"><a href="Login.html" target="_blank">Login</a></li>
+                <li><a href="CreateAccount.html" target="_blank">Register</a></li>
+                <li><a href='AddCity.html' target='_blank' id="add_city">Add City</a></li>                  
+                <li><a href="Chatting.html" target="_blank" id="chatting">Chat</a></li>                 
+                <li><a href="#">About</a></li>                
+            </ul>
+            <select id='city'>
+	            <option value='Fredericton' selected>Fredericton</option>
+	            <option value='Moncton'>Moncton</option>
+	            <option value='Montreal'>Montreal</option>
+	            <option value='Quebec'>Quebec</option>
+	            <option value='Calgary'>Calgary</option>
+	            <option value='Toronto'>Toronto</option>
+	            <option value='Ottawa'>Ottawa</option>
+	            <option value='Vancouver'>Vancouver</option>
+	            <option value='Halifax'>Halifax</option>
+	            <option value='Edmonton'>Edmonton</option>
+	        </select>
+        </div>
+    </div>
+
+    <!--header end-->
+    <!--content begin-->
+
+    <div class="wrap">
+        <div class="lw">
+            <div class="lw_i">
+               <div class="lw_ct">
+                    <div class="lw_ct_header">
+                        <h4 class="lw_ct_name" id="lw_ct_name"><span id="city_name"></span></h4>
+                    </div>
+                    <p class="lw_ct_date"><span id="today"></span></p>                            
+               </div>
+               <div class="lw_states">
+                    <p class="lw_icon_w">
+                        <img class="lw_icon" src="" height="128" width="128">
+                    </p>
+                    <div class="lw_degree"><span id='curr_temp'></span>℃</div>
+                    <p class="lw_detail">
+                        <span id='forecast'></span>&nbsp;&nbsp;|&nbsp;&nbsp;Wind Speed <span id='windspeed'></span>&nbsp;&nbsp;|&nbsp;&nbsp;Humidity：<span id='humidity'></span>%
+                    </p>
+               </div>
+           
+               <div class="air_q">
+                   <img id="current_clothing" src=""></img>
+               </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="wrap_w" id="wrap_w0">
+      <div class="wrap">
+        <div class="wt_forecast">
+            <div class="wt_tt0_w clearfix">
+                <h2 class="wt_tt0">Weather forecast<span class="wt_tt0_note"> (5 coming days)</span></h2>
+            </div>
+            <div class="blk_fc_c">
+                <div class="blk_fc_c0" id="blk_fc_c0">
+                    <div class="blk_fc_c0_scroll_w" id="blk_fc_c0_scroll_w">
+                    <div class="blk_fc_c0_scroll" id="blk_fc_c0_scroll" style="width: 1020px;">
+                      <!-- we dynamically add 5 days -->                         
+	                      <div class="blk_fc_c0_i">
+	                            <p class="wt_fc_c0_i_date"><span id="forecast_0_date"></span></p>
+	                            <p class="wt_fc_c0_i_day"><span id="forecast_0_week"></span></p>
+	                            <p class="wt_fc_c0_i_icons clearfix">
+	                                <img class="icons0_wt" id="icon_0_day">
+	                                <img class="icons0_wt" id="icon_0_night">
+	                            </p>
+	                            <p class="wt_fc_c0_i_times">
+	                                <span class="wt_fc_c0_i_time">Day</span>
+	                                <span class="wt_fc_c0_i_time">Night</span>
+	                            </p>
+	                            <p class="wt_fc_c0_i_temp"><span id="forecast_0_temp"></span></p>
+	                            <!--
+	                            <p class="wt_fc_c0_i_tip"><span id="forecast_0_wind"></span></p>
+	                            <ul class="wt_fc_c0_i_level level_bg1">
+	                                    <li class="l">20</li>
+	                                    <li class="r">Good</li>
+	                            </ul>-->
+	                     </div>
+	                      <div class="blk_fc_c0_i">
+	                            <p class="wt_fc_c0_i_date"><span id="forecast_1_date"></span></p>
+	                            <p class="wt_fc_c0_i_day"><span id="forecast_1_week"></span></p>
+	                            <p class="wt_fc_c0_i_icons clearfix">
+	                                <img class="icons0_wt" id="icon_1_day">
+	                                <img class="icons0_wt" id="icon_1_night">
+	                            </p>
+	                            <p class="wt_fc_c0_i_times">
+	                                <span class="wt_fc_c0_i_time">Day</span>
+	                                <span class="wt_fc_c0_i_time">Night</span>
+	                            </p>
+	                            <p class="wt_fc_c0_i_temp"><span id="forecast_1_temp"></span></p>
+	                     </div>
+	                      <div class="blk_fc_c0_i">
+	                            <p class="wt_fc_c0_i_date"><span id="forecast_2_date"></span></p>
+	                            <p class="wt_fc_c0_i_day"><span id="forecast_2_week"></span></p>
+	                            <p class="wt_fc_c0_i_icons clearfix">
+	                                <img class="icons0_wt" id="icon_2_day">
+	                                <img class="icons0_wt" id="icon_2_night">
+	                            </p>
+	                            <p class="wt_fc_c0_i_times">
+	                                <span class="wt_fc_c0_i_time">Day</span>
+	                                <span class="wt_fc_c0_i_time">Night</span>
+	                            </p>
+	                            <p class="wt_fc_c0_i_temp"><span id="forecast_2_temp"></span></p>
+	                     </div>
+	                      <div class="blk_fc_c0_i">
+	                            <p class="wt_fc_c0_i_date"><span id="forecast_3_date"></span></p>
+	                            <p class="wt_fc_c0_i_day"><span id="forecast_3_week"></span></p>
+	                            <p class="wt_fc_c0_i_icons clearfix">
+	                                <img class="icons0_wt" id="icon_3_day">
+	                                <img class="icons0_wt" id="icon_3_night">
+	                            </p>
+	                            <p class="wt_fc_c0_i_times">
+	                                <span class="wt_fc_c0_i_time">Day</span>
+	                                <span class="wt_fc_c0_i_time">Night</span>
+	                            </p>
+	                            <p class="wt_fc_c0_i_temp"><span id="forecast_3_temp"></span></p>
+	                     </div>
+	                      <div class="blk_fc_c0_i">
+	                            <p class="wt_fc_c0_i_date"><span id="forecast_4_date"></span></p>
+	                            <p class="wt_fc_c0_i_day"><span id="forecast_4_week"></span></p>
+	                            <p class="wt_fc_c0_i_icons clearfix">
+	                                <img class="icons0_wt" id="icon_4_day">
+	                                <img class="icons0_wt" id="icon_4_night">
+	                            </p>
+	                            <p class="wt_fc_c0_i_times">
+	                                <span class="wt_fc_c0_i_time">Day</span>
+	                                <span class="wt_fc_c0_i_time">Night</span>
+	                            </p>
+	                            <p class="wt_fc_c0_i_temp"><span id="forecast_4_temp"></span></p>
+	                     </div>
+                     <!-- add 5 here -->                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height:0px;overflow:hidden;"></div>
+        <div class="part1 clearfix"></div>
+      </div>      
+    </div>
+    <!--content end-->
+    
+
+    <!-- footer -->
+    <div class="footer">
+            <div class="ft_1">
+                <p>
+                    <a href="#">App Introduction</a>
+                    |
+                    <a href="#">About US</a>
+                </p>
+            </div>
+    </div>
+    <!-- end footer -->
+    
+
+
+
+</body>
+</html>
