@@ -1,0 +1,4 @@
+create table Chat(id int auto_increment, ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP() on update CURRENT_TIMESTAMP(), name varchar(50), message varchar(255), primary key(id));
+create table UserAccount(name varchar(20), password varchar(200), location varchar(255), gender varchar(8), age varchar(5), primary key(name));
+create table CityList(cityName varchar(50), primary key(cityName));
+
