@@ -59,13 +59,13 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session=request.getSession(); 
 			session.setAttribute("UserObject", loginCtrl.getUserObject());
 			writer.println("Login successful.<br>");
-	        writer.println("<p><a href='MainUI.html'> Home </a> </p>");
+	        writer.println("<p><a href='WeatherMain.html'> Home </a> </p>");
 		}else {
 			
 	        writer.println("Login failed.<br>");
 			writer.println("<p><a href='Login.html'> Login </a><p>");
 			writer.println("<p><a href='CreateAccount.html'> Create Account </a><p>");
-			writer.println("<p><a href='MainUI.html'> Home </a><p>");
+			writer.println("<p><a href='WeatherMain.html'> Home </a><p>");
 	    }
 	}
 

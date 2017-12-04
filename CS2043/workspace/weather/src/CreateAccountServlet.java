@@ -62,6 +62,7 @@ public class CreateAccountServlet extends HttpServlet {
          else {
         	 writer.println("User name already exists, please try another one. <br>");
         	 writer.println("<p><a href='CreateAccount.html'> Create account </a><p>");
+        	 writer.println("<p><a href='WeatherMain.html'> Home </a><p>");
          }
 	}
 
