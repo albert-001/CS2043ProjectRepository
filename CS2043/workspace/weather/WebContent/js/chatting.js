@@ -58,7 +58,7 @@ function parse_msgs(messages){
 	return msg_objs
 }
 
-function display_msgs(msg_objs, type){
+function display_msgs(msg_objs){
 	msg_objs.forEach(function(e){
 		if(e.user=="me"){
 			display_own_msg(e.msg, e.user, e.time);
